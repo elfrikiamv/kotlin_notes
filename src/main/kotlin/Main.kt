@@ -71,6 +71,24 @@ fun main(args: Array<String>) {
     val testString : String = "Test. 12345!-$%S/"
     println("String: $textString\nString: $testString")
 
+    //-------------> Condicionales
+
+    //if - else
+    var amv = 22
+
+    if (amv.equals(22)) {
+        println("es tu edad!")
+    } else {
+        println("no es tu edad")
+    }
+
+    val amv2 = 13
+
+    if (amv2.equals(22)) {
+        println("es tu edad!")
+    } else {
+        println("no es tu edad")
+    }
 
 }
 /*
