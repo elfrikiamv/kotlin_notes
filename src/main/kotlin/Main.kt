@@ -6,7 +6,7 @@
 fun main(args: Array<String>) {
     println("Hello World!")
 
-    //println("Mi edad es: "+my_age)
+    println("Mi edad es: "+ my_age +" años")
     println("Mi edad es: $my_age años")
 
     //-------------> Variable de lectura y escritura.
@@ -58,40 +58,39 @@ fun main(args: Array<String>) {
     //BOOLEAN
     val booleanVerdadero : Boolean = true
     val booleanFalso : Boolean = false
-    println("Boolean: $booleanVerdadero\nBoolean: $booleanFalso")
+    println("Boolean: $booleanVerdadero \nBoolean: $booleanFalso")
 
     //CHAR
     val caracter : Char = 'F'
     val caracterNumero : Char = '2'
     val caracterChar : Char = '@'
-    println("Char: $caracter\nChar: $caracterNumero\nChar: $caracterChar")
+    println("Char: $caracter \nChar: $caracterNumero \nChar: $caracterChar")
 
     //STRING
     val textString : String  = "Hola, soy un string xd"
-    val testString : String = "Test. 12345!-$%S/"
-    println("String: $textString\nString: $testString")
+    val testString2 : String = "Test. 12345!-$%S/"
+    println("String: $textString \nString: $testString2")
 
     //-------------> Condicionales
 
-    //if - else
-    var amv = 22
+    //IF - ELSE
+    var numero = 22
 
-    if (amv.equals(22)) {
+    if (numero.equals(22)) {
         println("es tu edad!")
     } else {
         println("no es tu edad")
     }
 
-    val amv2 = 13
+    numero = 13
 
-    if (amv2.equals(22)) {
+    if (numero.equals(22)) {
         println("es tu edad!")
     } else {
         println("no es tu edad")
     }
 
-    //when
-
+    //WHEN
     when (my_age) {
 
         22 -> {
@@ -134,6 +133,25 @@ fun main(args: Array<String>) {
             println("Ups!, algo no salio bien")
         }
     }
+
+    //-------------> Bucles
+
+    //WHILE
+    var contador = 0
+    while (contador < 10) {
+        println("el valor de contador es: $contador")
+        contador++
+    }
+
+    //DO WHILE
+    do {
+        println("Generando número...")
+        val numeroAleatorio = (0..222).random()
+        println("El número genrado es $numeroAleatorio")
+    }while (numeroAleatorio > 22)
+
+    //-------------> Bucles
+
 }
 /*
     // Try adding program arguments via Run/Debug configuration.
