@@ -20,7 +20,7 @@ fun main(args: Array<String>) {
 
     //-------------> variable de solo lectura (No se puede modificar).
 
-    val name = "M&j"
+    val name = "M&J"
     //println("Su nombre es: "+name)
     println("Su nombre es: $name")
 
@@ -90,6 +90,50 @@ fun main(args: Array<String>) {
         println("no es tu edad")
     }
 
+    //when
+
+    when (my_age) {
+
+        22 -> {
+
+                println("¡es tu edad!")
+        }
+        13 -> {
+
+            println("no es tu edad!")
+        }
+    }
+
+    when (name) {
+
+        "M&J", "Icee" -> {
+
+            println("Su nombre es: $name")
+        }
+        "Amv" -> {
+
+            println("Su nombre no es: $name")
+        }
+        else -> {
+            println("Ups!, algo no salio bien")
+        }
+    }
+
+    val code = 222
+    when (code) {
+
+        in 200..299 -> {
+
+            println("Esta dentro del rango su número: $code")
+        }
+        in 400..500 -> {
+
+            println("Esta dentro del rango su número: $code")
+        }
+        else -> {
+            println("Ups!, algo no salio bien")
+        }
+    }
 }
 /*
     // Try adding program arguments via Run/Debug configuration.
