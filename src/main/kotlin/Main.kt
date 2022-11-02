@@ -204,6 +204,12 @@ fun main(args: Array<String>) {
         println("Esta wea aún es nulo")
     }
 
+    //elvis operator
+    val valor2: String? = null
+    val valor3 = valor2 ?: "El valor es nulo"
+    val valor4: Int = valor2?.length ?: 22
+    println("El valor3 es: $valor3 \nEl valor4 es: $valor4")
+
 }
 /*
     // Try adding program arguments via Run/Debug configuration.
