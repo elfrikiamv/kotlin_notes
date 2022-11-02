@@ -187,6 +187,23 @@ fun main(args: Array<String>) {
     }
     println("Aqui estan las frutas con mas de 5 caracteres: $listaFiltrada")
 
+    //-------------> Null
+
+    var valor: String? = null
+    println("El valor es: ${valor?.length}")
+
+    //Try Catch - mala practtica
+    try {
+
+        println("El valor es: ${valor!!.length}")
+    } catch (e: Exception) {
+
+        println("El valor es nulo")
+    } finally {
+
+        println("Esta wea aún es nulo")
+    }
+
 }
 /*
     // Try adding program arguments via Run/Debug configuration.
