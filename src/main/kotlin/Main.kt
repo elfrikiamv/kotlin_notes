@@ -1,12 +1,12 @@
 //inicio git.
 
-    //-------------> Las constantes no deben cambiar nunca y se generan antes de darle compilar la aplicación.
-    const val my_age = 22
+//-------------> Las constantes no deben cambiar nunca y se generan antes de darle compilar la aplicación.
+const val my_age = 22
 
 fun main(args: Array<String>) {
-    println("Hello World!")
 
-    println("Mi edad es: "+ my_age +" años")
+    println("Hello World!")
+    println("Mi edad es: " + my_age + " años")
     println("Mi edad es: $my_age años")
 
     //-------------> Variable de lectura y escritura.
@@ -29,46 +29,46 @@ fun main(args: Array<String>) {
     //Típos numéricos.
 
     //BYTE
-    val numerobyte : Byte = 127
+    val numerobyte: Byte = 127
     println("Byte: $numerobyte")
 
     //SHORT
-    val numeroshort : Short = 32767
+    val numeroshort: Short = 32767
     println("Short: $numeroshort")
 
     //INT
-    val numeroInt : Int = 2147483647
+    val numeroInt: Int = 2147483647
     println("Int: $numeroInt")
 
     //LONG
-    val numeroLong : Long = 9223372036854775807
+    val numeroLong: Long = 9223372036854775807
     val numerol = -9223372036854775807L
     println("Long: $numeroLong\nLong: $numerol")
 
     //DOUBLE
-    val numeroDouble : Double = 18.01234567890123
+    val numeroDouble: Double = 18.01234567890123
     println("Double: $numeroDouble")
 
     //FLOAT
-    val numeroFloat : Float = 8.012345f
+    val numeroFloat: Float = 8.012345f
     println("Float: $numeroFloat")
 
     //Típos alfanuméricos.
 
     //BOOLEAN
-    val booleanVerdadero : Boolean = true
-    val booleanFalso : Boolean = false
+    val booleanVerdadero: Boolean = true
+    val booleanFalso: Boolean = false
     println("Boolean: $booleanVerdadero \nBoolean: $booleanFalso")
 
     //CHAR
-    val caracter : Char = 'F'
-    val caracterNumero : Char = '2'
-    val caracterChar : Char = '@'
+    val caracter: Char = 'F'
+    val caracterNumero: Char = '2'
+    val caracterChar: Char = '@'
     println("Char: $caracter \nChar: $caracterNumero \nChar: $caracterChar")
 
     //STRING
-    val textString : String  = "Hola, soy un string xd"
-    val testString2 : String = "Test. 12345!-$%S/"
+    val textString: String = "Hola, soy un string xd"
+    val testString2: String = "Test. 12345!-$%S/"
     println("String: $textString \nString: $testString2")
 
     //-------------> Condicionales
@@ -77,16 +77,20 @@ fun main(args: Array<String>) {
     var numero = 22
 
     if (numero.equals(22)) {
+
         println("es tu edad!")
     } else {
+
         println("no es tu edad")
     }
 
     numero = 13
 
     if (numero.equals(22)) {
+
         println("es tu edad!")
     } else {
+
         println("no es tu edad")
     }
 
@@ -95,8 +99,9 @@ fun main(args: Array<String>) {
 
         22 -> {
 
-                println("¡es tu edad!")
+            println("¡es tu edad!")
         }
+
         13 -> {
 
             println("no es tu edad!")
@@ -109,11 +114,14 @@ fun main(args: Array<String>) {
 
             println("Su nombre es: $name")
         }
+
         "Amv" -> {
 
             println("Su nombre no es: $name")
         }
+
         else -> {
+
             println("Ups!, algo no salio bien")
         }
     }
@@ -125,11 +133,14 @@ fun main(args: Array<String>) {
 
             println("Esta dentro del rango su número: $code")
         }
+
         in 400..500 -> {
 
             println("Esta dentro del rango su número: $code")
         }
+
         else -> {
+
             println("Ups!, algo no salio bien")
         }
     }
@@ -139,18 +150,42 @@ fun main(args: Array<String>) {
     //WHILE
     var contador = 0
     while (contador < 10) {
+
         println("el valor de contador es: $contador")
         contador++
     }
 
     //DO WHILE
     do {
+
         println("Generando número...")
         val numeroAleatorio = (0..222).random()
         println("El número genrado es $numeroAleatorio")
-    }while (numeroAleatorio > 22)
+    } while (numeroAleatorio > 22)
 
-    //-------------> Bucles
+    //for
+    val listaDeFrutas = listOf("platano", "naranja", "kiwi", "fresa", "papaya", "mango", "cereza")
+    for (fruta in listaDeFrutas) {
+
+        println("Aqui estan las frutas: $fruta")
+    }
+
+    //forEach
+    listaDeFrutas.forEach { fruta ->
+        println("Aqui estan la fruta: $fruta")
+    }
+
+    //map
+    val caracteresFrutas = listaDeFrutas.map { fruta ->
+        fruta.length
+    }
+    println("Aqui estan el número de caracteres de las frutas: $caracteresFrutas")
+
+    //filter
+    val listaFiltrada = caracteresFrutas.filter { largoCaracteresFrutas ->
+        largoCaracteresFrutas > 5
+    }
+    println("Aqui estan las frutas con mas de 5 caracteres: $listaFiltrada")
 
 }
 /*
