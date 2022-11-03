@@ -3,7 +3,7 @@
 //-------------> Las constantes no deben cambiar nunca y se generan antes de darle compilar la aplicación.
 const val my_age = 22
 
-fun main(args: Array<String>) {
+fun main() {
 
     println("Hello World!")
     println("Mi edad es: " + my_age + " años")
@@ -175,24 +175,12 @@ fun main(args: Array<String>) {
         println("Aqui estan la fruta: $fruta")
     }
 
-    //map
-    val caracteresFrutas = listaDeFrutas.map { fruta ->
-        fruta.length
-    }
-    println("Aqui estan el número de caracteres de las frutas: $caracteresFrutas")
-
-    //filter
-    val listaFiltrada = caracteresFrutas.filter { largoCaracteresFrutas ->
-        largoCaracteresFrutas > 5
-    }
-    println("Aqui estan las frutas con mas de 5 caracteres: $listaFiltrada")
-
     //-------------> Null
 
     var valor: String? = null
     println("El valor es: ${valor?.length}")
 
-    //Try Catch - mala practtica
+    //Try Catch - mala practica
     try {
 
         println("El valor es: ${valor!!.length}")
@@ -209,6 +197,185 @@ fun main(args: Array<String>) {
     val valor3 = valor2 ?: "El valor es nulo"
     val valor4: Int = valor2?.length ?: 22
     println("El valor3 es: $valor3 \nEl valor4 es: $valor4")
+
+
+    //-------------> Arrays
+
+    //Array
+    val array = arrayOf("platano", "naranja", "Blah", "fresa", "papaya", "mango", "cereza")
+    println("Aqui esta el array de frutas: $array")
+
+    //array to list
+    val arrayToList = array.toList()
+    println("Aqui esta el array de frutas convertido a lista: $arrayToList")
+
+    //-------------> List
+
+    //List
+    val lista = listOf("platano", "naranja", "kiwi", "fresa", "papaya", "mango", "cereza")
+    println("Aqui esta la lista de frutas: $lista")
+
+    //MutableList
+    val listaMutable = mutableListOf("platano", "naranja", "kiwi", "fresa", "papaya", "mango", "cereza")
+
+    listaMutable.add("sandia")
+    listaMutable.remove("naranja")
+    println("Aqui esta la lista mutable de frutas: $listaMutable")
+
+    //get item listaMutable
+    val valorUsandoGet = listaMutable.get(4)
+    val valorUsandoOperador = listaMutable[2]
+    println("Aqui esta el valor usando get: $valorUsandoGet \nAqui esta el valor usando operador: $valorUsandoOperador")
+
+    val primerValor = listaMutable.first()
+    val ultimoValor = listaMutable.last()
+    val primerValorNull = listaMutable.firstOrNull()
+    val ultimoValorNull = listaMutable.lastOrNull()
+    println("Aqui esta el primer valor: $primerValor \nAqui esta el primer valor null: $primerValorNull \nAqui esta el ultimo valor: $ultimoValor \nAqui esta el ultimo valor null: $ultimoValorNull")
+
+    //delete item listaMutable
+    listaMutable.removeAt(2)
+    println("Aqui esta la lista mutable de frutas removeAt: $listaMutable")
+
+    listaMutable.removeIf { fruta ->
+        fruta.length == 5
+    }
+    println("Aqui esta la lista mutable de frutas removeIf: $listaMutable")
+
+    //-------------> Ordenamiento de listas
+
+    //sort
+    val listaOrdenada = listaMutable.sorted()
+    println("Aqui esta la lista mutable de frutas ordenada: $listaOrdenada")
+
+    //sort descending
+    val listaOrdenadaDescendente = listaMutable.sortedDescending()
+    println("Aqui esta la lista mutable de frutas ordenada descendente: $listaOrdenadaDescendente")
+
+    //sort by - condition
+    val listaOrdenadaPorLongitud = listaMutable.sortedBy { fruta ->
+        fruta.length > 5
+    }
+    println("Aqui esta la lista mutable de frutas ordenada por longitud: $listaOrdenadaPorLongitud")
+
+    //sort by descending
+    val listaOrdenadaPorLongitudDescendente = listaMutable.sortedByDescending { fruta ->
+        fruta.length > 5
+    }
+    println("Aqui esta la lista mutable de frutas ordenada por longitud descendente: $listaOrdenadaPorLongitudDescendente")
+
+    //ramdom
+    val listaAleatoria = listaMutable.shuffled()
+    println("Aqui esta la lista mutable de frutas aleatoria: $listaAleatoria")
+
+    //reverse
+    val listaReversa = listaMutable.reversed()
+    println("Aqui esta la lista mutable de frutas reversa: $listaReversa")
+
+    //----------------> map and filter
+
+    //map
+    val caracteresFrutas = listaMutable.map { fruta ->
+        fruta.length
+    }
+    println("Aqui estan el número de caracteres de las frutas: $caracteresFrutas")
+
+    val listaMap = listaMutable.map { fruta ->
+        "$fruta con chilito"
+    }
+    println("Aqui esta la lista mutable de frutas map: $listaMap")
+
+    //filter
+    val listaFiltrada = caracteresFrutas.filter { largoCaracteresFrutas ->
+        largoCaracteresFrutas > 5
+    }
+    println("Aqui estan las frutas con mas de 5 caracteres: $listaFiltrada")
+
+    val listaFilter = listaMutable.filter { fruta ->
+        fruta.length > 5
+    }
+    println("Aqui esta la lista mutable de frutas filter: $listaFilter")
+
+    //----------------> Maps
+
+    //Map
+    val mapa =
+        mapOf("platano" to 1, "naranja" to 2, "kiwi" to 3, "fresa" to 4, "papaya" to 5, "mango" to 6, "cereza" to 7)
+    println("Aqui esta el mapa de frutas: $mapa")
+
+    //MutableMap
+    val mapaMutable = mutableMapOf(
+        "platano" to 1,
+        "naranja" to 2,
+        "kiwi" to 3,
+        "fresa" to 4,
+        "papaya" to 5,
+        "mango" to 6,
+        "cereza" to 7
+    )
+    println("Aqui esta el mapa mutable de frutas: $mapaMutable")
+
+    //add item mapaMutable
+    mapaMutable.put("sandia", 8)
+    println("Aqui esta el mapa mutable de frutas con sandia: $mapaMutable")
+
+    //get item mapaMutable
+    val valorUsandoGetMapa = mapaMutable.get("platano")
+    val valorUsandoOperadorMapa = mapaMutable["platano"]
+    println("Aqui esta el valor usando get: $valorUsandoGetMapa \nAqui esta el valor usando operador: $valorUsandoOperadorMapa")
+
+    //delete item mapaMutable
+    mapaMutable.remove("platano")
+    println("Aqui esta el mapa mutable de frutas remove: $mapaMutable")
+
+    //keys
+    val llaves = mapaMutable.keys
+    println("Aqui estan las llaves del mapa mutable de frutas: $llaves")
+
+    //values
+    val valores = mapaMutable.values
+    println("Aqui estan los valores del mapa mutable de frutas: $valores")
+
+    //isEmpty
+    val estaVacio = mapaMutable.isEmpty()
+    println("Aqui esta el valor de estaVacio: $estaVacio")
+
+    //isNotEmpty
+    val noEstaVacio = mapaMutable.isNotEmpty()
+    println("Aqui esta el valor de noEstaVacio: $noEstaVacio")
+
+    //size
+    val tamaño = mapaMutable.size
+    println("Aqui esta el valor de tamaño: $tamaño")
+
+    //clear
+    mapaMutable.clear()
+    println("Aqui esta el valor de mapaMutable.clear(): $mapaMutable")
+
+    //----------------> Sets (no vslores repetidos)
+
+    //Set
+    val set = setOf("platano", "naranja", "kiwi", "fresa", "papaya", "mango", "cereza")
+    println("Aqui esta el set de frutas: $set")
+
+    //MutableSet
+    val setMutable = mutableSetOf("platano", "naranja", "kiwi", "fresa", "papaya", "mango", "cereza")
+    println("Aqui esta el set mutable de frutas: $setMutable")
+
+    //add item setMutable
+    setMutable.add("sandia")
+    println("Aqui esta el set mutable de frutas con sandia: $setMutable")
+
+    //delete item setMutable
+    setMutable.remove("platano")
+    println("Aqui esta el set mutable de frutas remove: $setMutable")
+
+    //get item setMutable
+    val valorUsandoFirst = setMutable.firstOrNull { fruta ->
+        fruta == "kiwi"
+    }
+    println("Aqui esta el valor usando first: $valorUsandoFirst")
+
 
 }
 /*
