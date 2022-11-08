@@ -419,6 +419,34 @@ fun main() {
     }
     println(result)
 
+    //----------------> let
+    var apodo: String? = null
+    apodo?.let { value ->
+        println("Aqui esta el apodo: $value")
+    }
+    apodo = "amv"
+    apodo.let { value ->
+        println("Aqui esta el apodo: $value")
+    }
+
+    //----------------> with
+    val colors = mutableListOf("red", "green", "blue")
+    with(colors) {
+        add("pink")
+        add("black")
+        println("Aqui esta la lista de colores: $this, $size")
+    }
+
+    //----------------> run
+    val days = mutableListOf("monday", "tuesday", "wednesday")
+        .run {
+            add("thursday")
+            add("friday")
+            remove("monday")
+            this
+        }
+    println("Aqui esta la lista de dias: $days")
+
 
 }
 /*
