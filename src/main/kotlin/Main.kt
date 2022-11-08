@@ -352,7 +352,7 @@ fun main() {
     mapaMutable.clear()
     println("Aqui esta el valor de mapaMutable.clear(): $mapaMutable")
 
-    //----------------> Sets (no vslores repetidos)
+    //----------------> Sets (no valores repetidos)
 
     //Set
     val set = setOf("platano", "naranja", "kiwi", "fresa", "papaya", "mango", "cereza")
@@ -375,6 +375,49 @@ fun main() {
         fruta == "kiwi"
     }
     println("Aqui esta el valor usando first: $valorUsandoFirst")
+
+    //----------------> Functions
+
+    //function - afuera del main
+    fun sumar2(a: Int, b: Int): Int {
+
+        val result = a + b
+        return result
+    }
+    println("Aqui esta el resultado de la suma: ${sumar2(a = 2, b = 3)}")
+
+    //function of extension
+    fun String.sumar(c: Int, d: Int): String {
+
+        val result = c + d
+        return this + result
+    }
+    println("Aqui esta el resultado de la suma: ".sumar(c = 4, d = 5))
+
+    // parametros in functions
+    fun sumar3(a: Int, b: Int, c: Int, d: Int): Int {
+
+        val result = a + b + c + d
+        return result
+    }
+    println(sumar3(a = 1, b = 2, c = 3, d = 5))
+
+    //lambda - funciones cortas anónimas
+    val sumar4 = { a: Int, b: Int, c: Int, d: Int ->
+        a + b + c + d
+    }
+    println(sumar4(1, 2, 3, 4))
+
+    //hihg order functions
+    fun sumar5(a: Int, b: Int, c: Int, d: Int, operation: (Int, Int, Int, Int) -> Int): Int {
+
+        return operation(a, b, c, d)
+    }
+
+    val result = sumar5(1, 2, 3, 4) { a, b, c, d ->
+        a + b + c + d
+    }
+    println(result)
 
 
 }
