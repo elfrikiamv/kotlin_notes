@@ -447,6 +447,31 @@ fun main() {
         }
     println("Aqui esta la lista de dias: $days")
 
+    //----------------> apply
+    val numbers = mutableListOf("one", "two", "three")
+        .apply {
+            add("four")
+            add("five")
+            remove("one")
+        }
+    println("Aqui esta la lista de numeros: $numbers")
+
+    //apply null
+    val letters: MutableList<String>? = null
+    letters?.apply {
+        println("Aqui esta la lista de letras: $this")
+    }
+
+    //----------------> also
+    val names = mutableListOf("john", "jane", "joe")
+        .also { list ->
+            list.add("jack")
+            list.add("jill")
+            list.remove("john")
+            println("Aqui esta la lista de nombres: $list")
+        }.asReversed()
+    println("Aqui esta la lista de nombres: $names")
+
 
 }
 /*
