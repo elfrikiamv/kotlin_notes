@@ -1,32 +1,32 @@
 //inicio git.
 
-//-------------> Las constantes no deben cambiar nunca y se generan antes de darle compilar la aplicación.
+//-------------> the constants should never change and are generated before you give the application compile.
 const val my_age = 22
 
 fun main() {
 
     println("Hello World!")
-    println("Mi edad es: " + my_age + " años")
-    println("Mi edad es: $my_age años")
+    println("My age is: " + my_age + " years")
+    println("My age is: $my_age years")
 
-    //-------------> Variable de lectura y escritura.
+    //-------------> read and write variable.
 
-    var saldo = 13
+    var balance = 13
     //println("Saldo actual: "+saldo)
-    println("Tu saldo actual es de: $saldo pejecoins")
-    saldo = 42
+    println("Your current balance is: $balance pejecoins")
+    balance = 42
     //println("Saldo actualizado: "+saldo)
-    println("Tu saldo se a actualizado: $saldo pejecoins")
+    println("Your current balance is: $balance pejecoins")
 
-    //-------------> variable de solo lectura (No se puede modificar).
+    //-------------> read-only variable (cannot be modified).
 
     val name = "M&J"
     //println("Su nombre es: "+name)
-    println("Su nombre es: $name")
+    println("Your name is: $name")
 
-    //-------------> kotlin detecta automaticamente el tipo de variable pero si eres necio lo puedes especificar:
+    //-------------> kotlin automatically detects the variable type but if you're crazy you can specify it:
 
-    //Típos numéricos.
+    //numeric types.
 
     //BYTE
     val numerobyte: Byte = 127
@@ -53,7 +53,7 @@ fun main() {
     val numeroFloat: Float = 8.012345f
     println("Float: $numeroFloat")
 
-    //Típos alfanuméricos.
+    //Alphanumeric types.
 
     //BOOLEAN
     val booleanVerdadero: Boolean = true
